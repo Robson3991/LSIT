@@ -4,8 +4,8 @@
   "description": "LSIT recruitment project",
   "main": "index.js",
   "scripts": {
-    "watch": "parcel watch index.html",
-    "build": "parcel build index.html index.js style.scss -d build",
+    "dev": "parcel index.html",
+    "build": "parcel build index.html style.scss index.js --public-url ./ -d build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
