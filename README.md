@@ -2,7 +2,7 @@
 You set square, and small rectangle values, and calculator calculate how small rectangle will must change, to have the same sizes like square.
 
 ## Technologies
-* [parcel] (https://parceljs.org/) 
+* [parcel](https://parceljs.org/) 
 * JavaScript (ES6)
 * SCSS
 
