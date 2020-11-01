@@ -17,7 +17,8 @@ class CalculatorItem {
     this.messages = {
       newValues: 'Nowe wartości prostokąta to',
       notNumber: 'Można wpisywać tylko cyfry',
-      toBig:     'Prostokąt nie może mieć większych wartości niż kwadrat'
+      toBig:     'Prostokąt musi posiadać mniejsze wartości niż kwadrat',
+      toBigY:    'Wartość boku Y prostokąta nie może być większa niż wartość boku X'
     }
 
      return this.messageElement ? true : false;
@@ -46,8 +47,13 @@ class CalculatorItem {
 
     if(!this.square || !this.rectangleX || !this.rectangleY) return false;
 
-    if(this.rectangleX > this.square || this.rectangleY > this.square) {
+    if(this.rectangleX >= this.square || this.rectangleY >= this.square) {
       addMessage(this.messageElement, this.messages.toBig, true);
+      return false;
+    }
+
+    if(this.rectangleY > this.rectangleX) {
+      addMessage(this.messageElement, this.messages.toBigY, true);
       return false;
     }
 

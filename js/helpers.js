@@ -1,12 +1,13 @@
 const calculateRectangle = (square, rectangle) => {
 
 	const difference = square / rectangle.x;
+	const round = (element) => parseFloat(element).toFixed(2).replace(/[.,]00$/, "")
 
     if(difference <= 1) return false;
 
     const item = {
-      x: rectangle.x * difference,
-			y: parseFloat(rectangle.y * difference).toFixed(2)
+      x: round(rectangle.x * difference),
+			y: round(rectangle.y * difference)
 		}
 		
 		return item;
